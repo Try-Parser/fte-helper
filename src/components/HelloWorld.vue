@@ -27,11 +27,13 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <c_input type="text" label="wtf"></c_input>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import c_input '@/assets/components/fte/components/Input'
 
 @Component
 export default class HelloWorld extends Vue {
