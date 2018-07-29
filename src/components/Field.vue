@@ -12,7 +12,7 @@
 					<b-col cols="1">
 						<fa :icon="status" v-bind:class="{ 'fa-spin': spin }" v-if="show_icon"/>
 					</b-col>
-				</b-row>
+				</b-row> 
 				<b-row>
 			        <div class="error"> 
 			        	<span v-if="error"> {{ proper_label }}: [ </span>
@@ -27,8 +27,8 @@
 
 <script lang="ts">
 	import { Vue, Component, Prop } from "vue-property-decorator"
-	import { Validator }  from "../ts/Validator"
-	import { Response } from "../ts/Enum"
+	import { Validator }  from "@/assets/Validator"
+	import { Response } from "@/assets/Enum"
 
 	let valid = Validator.getInstance
 
@@ -83,7 +83,6 @@
 		}
 
 		validated_data () {
-			console.log("aw")
 			this.status[1] = "check-circle"
 			this.spin = false
 			this.error = false
@@ -96,12 +95,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 	$error: red;
 	$correct: green;
 	$loader: gray;
 
-	.container {
+	.container-fluid {
 		.row {
 			&.input-group {
 				padding: 1rem 1rem 0 1rem;
