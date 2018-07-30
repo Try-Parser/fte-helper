@@ -1,10 +1,16 @@
 <template>
 	<b-form @submit="onSubmit">
 		<slot></slot>
-		<b-row>	
-			<b-col cols="12">
-				<b-button variant="success" type="submit">Submit</b-button>
-				<b-button variant="danger">Cancel</b-button>
+		<b-row v-if="!def">	
+			<b-col cols="4" offset="8">
+				<b-button variant="danger" size="sm" >
+					<fa :icon='["far", "times-circle"]' />
+					Cancel
+				</b-button>
+				<b-button variant="success"  size="sm" type="submit">
+					<fa :icon='["far", "save"]' />
+					Submit
+				</b-button>
 			</b-col>
 		</b-row>
 	</b-form>
@@ -24,20 +30,25 @@
 
 	@Component
 	export default class Form extends Vue {
+		@Prop(String) def!: string
+
 		data: FormResp = { 
-			data: [],  
+			data: {},  
 			error: false,
 			error_field: []
 		}
 		onSubmit (evt) {
 			evt.preventDefault()
 			this.data.error_field = []
+			this.data.data = {}
 			for(let child of this.$children) {
 				if(child.$options["_componentTag"] === "Field") {
 					this.data.data[child["name"]] = child["inp_val"]
 					if(child["error"]) {
 						this.data.error = true
 						this.data.error_field.push(child["name"])
+					} else {
+						this.data.error = false
 					}
 				}
 			}
@@ -63,7 +74,6 @@
 
 <style lang="scss" scoped>
 	button {
-		margin: 1px;
-		float: right
+		margin:5px;
 	}
 </style>

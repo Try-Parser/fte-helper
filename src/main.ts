@@ -12,10 +12,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckCircle, faSnowflake, faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+import { faCheckCircle, faSnowflake, faTimesCircle, faSave } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCheckCircle, faSnowflake, faTimesCircle)
+library.add(faCheckCircle, faSnowflake, faTimesCircle, faSave)
 
 Vue.component('fa', FontAwesomeIcon)
 

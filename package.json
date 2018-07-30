@@ -1,12 +1,17 @@
 {
   "name": "@try-parser/fte-helper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build-bundle": "vue-cli-service build --target lib --name fte-helper ./src/components/index.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Try-Parser/fte-helper.git"
+  },
+  "main": "./dist/fte-helper.common.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
@@ -45,5 +50,6 @@
     "*.json",
     "*.js"
   ],
-  "author": "tryparser"
+  "author": "tryparser",
+  "license": "ISC"
 }

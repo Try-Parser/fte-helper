@@ -95,7 +95,7 @@
 	}
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 	$error: red;
 	$correct: green;
 	$loader: gray;
